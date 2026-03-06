@@ -5,6 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Vihari Battula — Modern History Curriculum Guide</title>
+    <meta name="description"
+        content="A comprehensive study guide covering modern world history from 1900 to the present, including WWI, WWII, the Cold War, decolonization, and more. Complete with quizzes and assessments.">
 
     <!-- MathJax -->
     <script>
@@ -61,6 +63,17 @@
         </div>
         <div class="header-right">
             <span class="last-updated">Last updated: <span id="dateDisplay"></span></span>
+            <div class="header-search-shell" id="headerSearchShell">
+                <div class="header-search-input-wrap">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27a6 6 0 10-.71.71l.27.28v.79L19 20.5 20.5 19l-5-5zm-5.5 0A4.5 4.5 0 1114.5 9 4.5 4.5 0 0110 14z" />
+                    </svg>
+                    <input id="wikiSearchInput" type="search" placeholder="Search Wikipedia..." autocomplete="off"
+                        aria-label="Search Wikipedia">
+                </div>
+                <div id="wikiSearchResults" class="assistant-search-results"></div>
+            </div>
             <button class="btn-reveal print-btn" onclick="window.print()">Print Syllabus PDF</button>
             <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle Menu">
                 <span class="hamburger"></span>
@@ -81,9 +94,10 @@
             </div>
 
             <div class="nav-group">
-                <button class="nav-header" onclick="toggleGroup(this)">Assessments</button>
+                <button class="nav-header" onclick="toggleGroup(this)">Assessments & Games</button>
                 <div class="nav-links-container">
                     <a onclick="navigateTo('quizzes-hub')" class="nav-item" id="nav-quizzes-hub">Quizzes & Tests</a>
+                    <a onclick="navigateTo('games-hub')" class="nav-item" id="nav-games-hub">Interactive Games</a>
                 </div>
             </div>
 
@@ -172,23 +186,36 @@
 
                     <!-- UNIT 5 -->
                     <div class="nav-group collapsed">
-                        <button class="nav-header sub-nav-header" onclick="toggleGroup(this)">Unit 5: India &
-                            China</button>
+                        <button class="nav-header sub-nav-header" onclick="toggleGroup(this)">Unit 5: Post-1900 Asian
+                            History</button>
                         <div class="nav-links-container">
                             <a onclick="navigateTo('u5-india-china')" class="nav-item" id="nav-u5-india-china">Unit
                                 Overview</a>
                             <a onclick="navigateTo('u5-india-china', 'u5.1')" class="nav-sub">5.1 Chinese Republic</a>
                             <a onclick="navigateTo('u5-india-china', 'u5.2')" class="nav-sub">5.2 Mao Zedong's
                                 Theory</a>
-                            <a onclick="navigateTo('u5-india-china', 'u5.3')" class="nav-sub">5.3 The Long March</a>
-                            <a onclick="navigateTo('u5-india-china', 'u5.4')" class="nav-sub">5.4 Japanese Invasions</a>
-                            <a onclick="navigateTo('u5-india-china', 'u5.5')" class="nav-sub">5.5 Indian Nationalism
-                                (1885)</a>
-                            <a onclick="navigateTo('u5-india-china', 'u5.6')" class="nav-sub">5.6 Gandhi's
-                                Satyagraha</a>
-                            <a onclick="navigateTo('u5-india-china', 'u5.7')" class="nav-sub">5.7 The Salt March</a>
-                            <a onclick="navigateTo('u5-india-china', 'u5.8')" class="nav-sub">5.8 Modern Indian
-                                Economy</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.3')" class="nav-sub">5.3 Communist Victory</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.4')" class="nav-sub">5.4 Great Leap Forward</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.5')" class="nav-sub">5.5 Cultural
+                                Revolution</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.6')" class="nav-sub">5.6 Red Guard Terror</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.7')" class="nav-sub">5.7 Gang of Four</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.8')" class="nav-sub">5.8 Deng's Dilemma</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.9')" class="nav-sub">5.9 Tiananmen Square</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.10')" class="nav-sub">5.10 One-Child Policy</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.11')" class="nav-sub">5.11 Hong Kong</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.12')" class="nav-sub">5.12 Indian
+                                Independence</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.13')" class="nav-sub">5.13 Gandhi's Vision</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.14')" class="nav-sub">5.14 Economic
+                                Independence</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.15')" class="nav-sub">5.15 Gandhi's
+                                Leadership</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.16')" class="nav-sub">5.16 The Two Koreas</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.17')" class="nav-sub">5.17 North Korea</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.18')" class="nav-sub">5.18 South Korea</a>
+                            <a onclick="navigateTo('u5-india-china', 'u5.19')" class="nav-sub">5.19 Current
+                                Relations</a>
                         </div>
                     </div>
 
@@ -196,10 +223,18 @@
                         <button class="nav-header sub-nav-header" onclick="toggleGroup(this)">Unit 6: Middle
                             East</button>
                         <div class="nav-links-container">
-                            <a onclick="navigateTo('u6-middle-east')" class="nav-item"
-                                id="nav-nav-u6-middle-east">Regional
+                            <a onclick="navigateTo('u6-middle-east')" class="nav-item" id="nav-u6-middle-east">Regional
                                 Overview</a>
                             <a onclick="navigateTo('u6-middle-east', 'u6.1')" class="nav-sub">6.1 Ottoman Challenges</a>
+                            <a onclick="navigateTo('u6-middle-east', 'u6.2')" class="nav-sub">6.2 Secularism vs.
+                                Theocracy</a>
+                            <a onclick="navigateTo('u6-middle-east', 'u6.3')" class="nav-sub">6.3 Israel-Palestine
+                                Origins</a>
+                            <a onclick="navigateTo('u6-middle-east', 'u6.4')" class="nav-sub">6.4 Arab-Israeli Wars</a>
+                            <a onclick="navigateTo('u6-middle-east', 'u6.5')" class="nav-sub">6.5 PLO & Lebanon</a>
+                            <a onclick="navigateTo('u6-middle-east', 'u6.6')" class="nav-sub">6.6 Persian Gulf
+                                Conflicts</a>
+                            <a onclick="navigateTo('u6-middle-east', 'u6.7')" class="nav-sub">6.7 Al-Qaeda & 9/11</a>
                         </div>
                     </div>
 
@@ -208,11 +243,31 @@
                             America</button>
                         <div class="nav-links-container">
                             <a onclick="navigateTo('u7-latin-america')" class="nav-item"
-                                id="nav-nav-u7-latin-america">Regional
+                                id="nav-u7-latin-america">Regional
                                 Overview</a>
                             <a onclick="navigateTo('u7-latin-america', 'u7.1')" class="nav-sub">7.1 Cuban Revolution</a>
                             <a onclick="navigateTo('u7-latin-america', 'u7.2')" class="nav-sub">7.2 Missile Crisis
                                 Impact</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-group collapsed">
+                        <button class="nav-header sub-nav-header" onclick="toggleGroup(this)">Challenging
+                            Quizzes</button>
+                        <div class="nav-links-container">
+                            <a href="quiz-runner.html?id=unit1_c" class="nav-item">Unit 1: Great
+                                War (Adv)</a>
+                            <a href="quiz-runner.html?id=unit2_c" class="nav-item">Unit 2: WWII
+                                (Adv)</a>
+                            <a href="quiz-runner.html?id=unit3_c" class="nav-item">Unit 3: Cold
+                                War (Adv)</a>
+                            <a href="quiz-runner.html?id=unit4_c" class="nav-item">Unit 4:
+                                Decolonization (Adv)</a>
+                            <a href="quiz-runner.html?id=unit5_c" class="nav-item">Unit 5: India
+                                & China (Adv)</a>
+                            <a href="quiz-runner.html?id=unit6_c" class="nav-item">Unit 6:
+                                Middle
+                                East (Adv)</a>
                         </div>
                     </div>
                 </div>
@@ -307,30 +362,88 @@
                                     B</button>
                             </div>
                         </div>
+
+                        <div class="tech-card" style="border-left: 4px solid var(--primary);">
+                            <h4>Unit 6: Middle East</h4>
+                            <p>Topics: Ottoman Collapse, Arab-Israeli Wars, Oil, Al-Qaeda</p>
+                            <div style="margin-top: 16px; display: flex; gap: 8px;">
+                                <button onclick="window.location.href='quiz-runner.html?id=unit6_a'" class="btn-reveal"
+                                    style="font-size: 14px; padding: 8px 16px;">Take Variant A</button>
+                                <button onclick="window.location.href='quiz-runner.html?id=unit6_b'" class="btn-reveal"
+                                    style="font-size: 14px; padding: 8px 16px; background: white; color: var(--primary); border: 1px solid var(--border);">Variant
+                                    B</button>
+                            </div>
+                        </div>
                     </div>
 
                     <h2 style="margin-top: 48px;">Final Examinations</h2>
-                    <p>Comprehensive exams covering all units (1-5). These are timed and designed to simulate final
+                    <p>Comprehensive exams covering all units (1-6). These are timed and designed to simulate final
                         testing conditions.</p>
                     <div class="tech-grid">
                         <div class="tech-card" style="border-left: 4px solid var(--accent);">
                             <h4>Final Exam (Variant A)</h4>
-                            <p>Comprehensive Test - Units 1-5</p>
+                            <p>Comprehensive Test - Units 1-6</p>
                             <button onclick="window.location.href='quiz-runner.html?id=final_exam_a'" class="btn-reveal"
                                 style="width: 100%; margin-top: 12px;">Take Exam</button>
                         </div>
                         <div class="tech-card" style="border-left: 4px solid var(--accent);">
                             <h4>Final Exam (Variant B)</h4>
-                            <p>Comprehensive Test - Units 1-5</p>
+                            <p>Comprehensive Test - Units 1-6</p>
                             <button onclick="window.location.href='quiz-runner.html?id=final_exam_b'" class="btn-reveal"
                                 style="width: 100%; margin-top: 12px;">Take Exam</button>
                         </div>
                         <div class="tech-card" style="border-left: 4px solid var(--accent);">
                             <h4>Final Exam (Variant C)</h4>
-                            <p>Comprehensive Test - Units 1-5</p>
+                            <p>Comprehensive Test - Units 1-6</p>
                             <button onclick="window.location.href='quiz-runner.html?id=final_exam_c'" class="btn-reveal"
                                 style="width: 100%; margin-top: 12px;">Take Exam</button>
                         </div>
+                    </div>
+                </section>
+
+                <section id="games-hub" class="content-section">
+                    <h1>Interactive Games & Activities</h1>
+                    <div class="unit-intro">
+                        <p>Take a break from reading and test your knowledge with these fun, interactive history games!
+                        </p>
+                    </div>
+
+                    <div class="tech-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+                        <div class="tech-card">
+                            <h4>🃏 Historical Flashcards</h4>
+                            <p>Flip through 15 key terms, dates, and figures to test your memory across all units.</p>
+                            <button onclick="startFlashcards()" class="btn-reveal"
+                                style="width: 100%; margin-top: 16px;">Play Flashcards</button>
+                        </div>
+                        <div class="tech-card">
+                            <h4>📅 Timeline Sorter</h4>
+                            <p>Drag and drop 8 major events into chronological order.</p>
+                            <button onclick="startTimelineGame()" class="btn-reveal"
+                                style="width: 100%; margin-top: 16px;">Play Timeline Sorter</button>
+                        </div>
+                        <div class="tech-card">
+                            <h4>🕴️ Who Am I?</h4>
+                            <p>Clues appear one by one — guess the historical figure with the fewest hints!</p>
+                            <button onclick="startWhoAmI()" class="btn-reveal"
+                                style="width: 100%; margin-top: 16px;">Play Who Am I?</button>
+                        </div>
+                        <div class="tech-card">
+                            <h4>📚 Vocabulary Matcher</h4>
+                            <p>Click and match key curriculum terms to their definitions.</p>
+                            <button onclick="startVocabGame()" class="btn-reveal"
+                                style="width: 100%; margin-top: 16px;">Play Vocab Matcher</button>
+                        </div>
+                        <div class="tech-card">
+                            <h4>🔗 Cause & Effect</h4>
+                            <p>Match historical causes to the effects they triggered across the 20th century.</p>
+                            <button onclick="startCauseEffect()" class="btn-reveal"
+                                style="width: 100%; margin-top: 16px;">Play Cause & Effect</button>
+                        </div>
+                    </div>
+
+                    <div id="game-container"
+                        style="display: none; margin-top: 32px; padding: 24px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-alt);">
+                        <!-- Game content will be injected here via JS -->
                     </div>
                 </section>
 
@@ -413,6 +526,15 @@
                         </div>
                     </div>
 
+                    <h3 class="sub-sub-title">Major Attritional Campaigns: Verdun & The Somme</h3>
+                    <p>The industrialization of the war resulted in horrific stalemates characterized by "meat grinder"
+                        offensives. For example, during the 1916 <strong>Battle of Verdun</strong>, the German objective
+                        was simply to "bleed France white," resulting in over 700,000 casualties for roughly 10 miles of
+                        contested land. To relieve pressure on Verdun, the British launched the <strong>Battle of the
+                            Somme</strong>, notorious for causing 57,000 British casualties on the first day alone,
+                        demonstrating the tragic futility of frontal assaults against entrenched machine guns and
+                        artillery.</p>
+
                     <h3 class="sub-sub-title">The Home Front & Propaganda</h3>
                     <p>Nations mobilized their entire populations. Governments utilized the <strong>press and early
                             cinema</strong> to demonize the enemy and justify the transition to a high-sacrifice
@@ -485,6 +607,19 @@
                         </div>
                     </div>
 
+                    <h3 class="sub-sub-title">Consolidation of Power: The Russian Civil War & The USSR</h3>
+                    <p>Following the October coup, the Bolsheviks faced immediate resistance, triggering the brutal
+                        <strong>Russian Civil War (1917-1922)</strong>. The Bolshevik <strong>"Red Army,"</strong>
+                        organized by Leon Trotsky, fought the <strong>"White Army,"</strong> a loose coalition of
+                        monarchists, capitalists, and foreign interventionists (including the US and UK). Through the
+                        implementation of <strong>War Communism</strong>—which involved the forced requisition of grain
+                        from peasants and the nationalization of all industries—and widespread use of state terror via
+                        the <strong>Cheka</strong> (secret police), the Bolsheviks emerged victorious. The consequence
+                        was the total dismantling of the Russian Empire and the creation of the <strong>Soviet Union
+                            (USSR)</strong> in 1922, establishing the world's first communist superpower and
+                        fundamentally altering the global balance of power.
+                    </p>
+
                     <div class="ref-box">
                         <div class="ref-title">Curriculum Focus: Brest-Litovsk</div>
                         <p style="margin: 0; font-size: 14px;">To fulfill his promise of "Peace," Lenin signed the
@@ -497,6 +632,18 @@
                     <h2 id="u1.6">1.6 The End of the War & Treaty of Versailles</h2>
                     <p class="section-intro">The armistice began on 11/11/1918, but the peace treaty created a "Bitter
                         Peace" that sowed the seeds for WWII.</p>
+
+                    <h3 class="sub-sub-title">The Paris Peace Conference & The Big Four</h3>
+                    <p>The negotiations were dominated by the <strong>"Big Four"</strong> leaders, who arrived with
+                        fatally conflicting agendas. US President <strong>Woodrow Wilson</strong> championed his
+                        idealistic <strong>Fourteen Points</strong>, emphasizing "peace without victory" and a League of
+                        Nations. In stark contrast, French Premier <strong>Georges Clemenceau</strong> ("The Tiger")
+                        demanded the complete economic and military dismemberment of Germany to prevent future
+                        invasions. British Prime Minister <strong>David Lloyd George</strong> sought a middle ground to
+                        preserve British trade, while Italian Prime Minister <strong>Vittorio Orlando</strong> left
+                        frustrated when promised territorial gains were denied. This clash, particularly the
+                        overpowering demand for vengeance from France and Britain, doomed Wilson’s localized vision of a
+                        fair peace.</p>
 
                     <table class="history-table">
                         <thead>
@@ -523,6 +670,10 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="interactive-embed" id="treaty-builder">
+                        <!-- Populated by JS: initTreatyBuilder() -->
+                    </div>
 
                     <div class="study-tips-section">
                         <div class="tips-header">
@@ -565,8 +716,21 @@
 
                     <!-- SECTION 1: RISE OF DICTATORS -->
                     <h2 id="u2.1">2.1 The Seeds of Conflict: Rise of the Dictators</h2>
-                    <p class="section-intro">The "interwar" years (1918–1939) were defined by global economic collapse
-                        and a profound sense of betrayal following the Treaty of Versailles.</p>
+                    <p class="section-intro">The "interwar" years (1918–1939) were defined by global economic collapse,
+                        a profound sense of betrayal following the Treaty of Versailles, and the complete
+                        <strong>failure of the League of Nations</strong>.
+                    </p>
+
+                    <div class="ref-box" style="margin-bottom: 24px;">
+                        <h3 class="ref-title">The Impotence of the League of Nations</h3>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">Designed to prevent future wars through
+                            collective security, the League of Nations proved structurally weak because it lacked an
+                            armed force and the United States refused to join. Its authority shattered when it failed to
+                            stop <strong>Japan's invasion of Manchuria (1931)</strong>—issuing only a verbal
+                            condemnation—and proved utterly powerless during <strong>Italy's brutal invasion of
+                                Abyssinia (Ethiopia) in 1935</strong>. These failures signaled to Hitler and Mussolini
+                            that aggressive expansion would meet no serious international resistance.</p>
+                    </div>
 
                     <div class="cause-card">
                         <h3 class="cause-title"><span class="cause-letter">I</span> Italy (1922)</h3>
@@ -639,6 +803,10 @@
                         </div>
                     </div>
 
+                    <div class="interactive-embed" id="strategy-sim">
+                        <!-- Populated by JS: initStrategySim() -->
+                    </div>
+
                     <!-- SECTION 3: THE EASTERN FRONT -->
                     <h2 id="u2.3">2.3 Operation Barbarossa: The War in the East</h2>
                     <p class="section-intro">On June 22, 1941, Hitler launched the largest land invasion in history,
@@ -705,17 +873,26 @@
 
                     <!-- SECTION 6: THE NEW ORDER -->
                     <h2 id="u2.6">2.6 The "New Order" & Human Rights</h2>
-                    <p class="section-intro">The Holocaust was a central pillar of Hitler’s vision for a Nazi-dominated
-                        Europe.</p>
+                    <p class="section-intro">The Holocaust (Shoah) was not a byproduct of the war, but a central pillar
+                        of Hitler’s ideological vision to biologically engineer a "pure" Aryan Europe.</p>
 
                     <ul class="problem-list">
-                        <li class="problem-item"><strong>Wannsee Conference (1942):</strong> The moment the "Final
-                            Solution"
-                            moved from random shootings to an industrial, bureaucratic extermination process.</li>
-                        <li class="problem-item"><strong>The Resistance:</strong> Internal fragile points were exposed
-                            by groups
-                            like the <strong>White Rose</strong> (German students) and the <strong>French
-                                Resistance</strong> (sabotage).</li>
+                        <li class="problem-item"><strong>The Einsatzgruppen:</strong> Before death camps were built,
+                            these mobile SS death squads followed the German army into the Soviet Union, tasked with the
+                            mass shooting of over a million Jewish men, women, and children into mass graves (e.g., Babi
+                            Yar).</li>
+                        <li class="problem-item"><strong>Wannsee Conference (1942):</strong> The logistical turning
+                            point where Nazi bureaucrats formalized the <strong>"Final Solution,"</strong> transitioning
+                            from mass shootings to an industrialized extermination process. They utilized poison gas
+                            (Zyklon B) at specialized death camps like <strong>Auschwitz-Birkenau</strong>,
+                            <strong>Treblinka</strong>, and <strong>Sobibor</strong>. Six million Jews and millions of
+                            others (Roma, disabled individuals, political dissidents) were systematically murdered.
+                        </li>
+                        <li class="problem-item"><strong>The Resistance:</strong> Internal resistance existed
+                            everywhere, from the <strong>Warsaw Ghetto Uprising (1943)</strong> where starving Jewish
+                            fighters held off the SS for nearly a month, to the <strong>White Rose</strong> student
+                            movement in Germany, and the extensive <strong>French Resistance</strong> sabotage networks.
+                        </li>
                     </ul>
 
                     <!-- SECTION 7: TURNING TIDES -->
@@ -738,9 +915,27 @@
                     </ul>
 
                     <!-- SECTION 8: SIGNIFICANCE & LAW -->
-                    <h2 id="u2.8">2.8 Historical Significance & International Law</h2>
-                    <p class="section-intro">WWII created the blueprint for our modern world ordered by international
-                        law.</p>
+                    <h2 id="u2.8">2.8 Setting the Stage: Yalta, Potsdam & International Law</h2>
+                    <p class="section-intro">The war's conclusion required unprecedented diplomatic summits that
+                        inadvertently laid the groundwork for the Cold War, while tribunals sought to create a modern
+                        system of international law.</p>
+
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>The Yalta Conference (Feb 1945)</h4>
+                            <p>The "Big Three" (Roosevelt, Churchill, Stalin) met in Crimea. They agreed to divide
+                                Germany into <strong>four occupation zones</strong>. Crucially, Stalin promised "free
+                                elections" for liberated Eastern Europe—a promise he broke to install Soviet satellite
+                                states, inciting Cold War tensions.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>The Potsdam Conference (July 1945)</h4>
+                            <p>Tensions flared as a new Big Three met (Truman, Atlee, Stalin). Truman intimidated Stalin
+                                by revealing America’s new <strong>Atomic Bomb</strong>. They finalized the
+                                demilitarization of Germany and shifted Poland's borders westward, physically dividing
+                                the post-war world.</p>
+                        </div>
+                    </div>
 
                     <div class="tech-grid">
                         <div class="tech-card">
@@ -796,10 +991,35 @@
                             transformed global politics through proxy wars and reform movements.</p>
                     </div>
 
-                    <!-- SECTION 1: RIVALRY & BERLIN -->
-                    <h2 id="u3.1">3.1 Superpower Rivalry & The Iron Curtain</h2>
-                    <p class="section-intro">Berlin became the central flashpoint of Cold War tensions, physically
-                        dividing Europe into democratic West and communist East.</p>
+                    <!-- SECTION 1: CONTAINMENT & RIVALRY -->
+                    <h2 id="u3.1">3.1 Containment & The Iron Curtain</h2>
+                    <p class="section-intro">As the "Iron Curtain" descended, the US adopted
+                        <strong>Containment</strong>—committing to stop the spread of communism anywhere in the world.
+                        Meanwhile, Berlin remained the central geographic flashpoint.
+                    </p>
+
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Truman Doctrine (1947)</h4>
+                            <p>President Truman pledged US military aid to nations threatened by communist forces,
+                                initially saving Greece and Turkey.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>The Marshall Plan</h4>
+                            <p>The US pumped <strong>$13 billion</strong> into rebuilding Western Europe, cementing
+                                transatlantic capitalist ties to prevent communist influence.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>NATO (1949)</h4>
+                            <p>The North Atlantic Treaty Organization formed as a mutual defense pact among Western
+                                democracies.</p>
+                        </div>
+                        <div class="tech-card" style="border-left: 4px solid #ef4444;">
+                            <h4>Warsaw Pact (1955)</h4>
+                            <p>In direct response to West Germany joining NATO, the USSR created its own coercive
+                                military alliance with Eastern Europe.</p>
+                        </div>
+                    </div>
 
                     <ul class="problem-list">
                         <li class="problem-item"><strong>The Berlin Wall:</strong> A massive concrete barrier created to
@@ -810,10 +1030,22 @@
                             riots and strikes against Soviet-backed control.</li>
                     </ul>
 
-                    <!-- SECTION 2: ARMS RACE & DETENTE -->
-                    <h2 id="u3.2">3.2 The Nuclear Arms Race & Detente</h2>
-                    <p class="section-intro">Mutually Assured Destruction (MAD) kept the superpowers from direct
-                        conflict, leading to an era of high-stakes diplomacy.</p>
+                    <!-- SECTION 2: ARMS RACE, SPACE RACE & DETENTE -->
+                    <h2 id="u3.2">3.2 The Arms Race, Space Race & Detente</h2>
+                    <p class="section-intro">The competition for global supremacy extended beyond nuclear stockpiles
+                        into the cosmos, while Mutually Assured Destruction (MAD) simultaneously forced periods of
+                        diplomatic caution.</p>
+
+                    <div class="ref-box" style="margin-bottom: 24px;">
+                        <h3 class="ref-title">The Space Race</h3>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">The Cold War battle for ideological
+                            superiority played out in technological milestones. The Soviet Union terrified the West by
+                            launching <strong>Sputnik 1 (1957)</strong>, proving they possessed rocket technology
+                            capable of delivering nuclear warheads globally. Following the Russian success of putting
+                            the first man (Yuri Gagarin) into orbit, US President Kennedy ignited an unprecedented
+                            funding surge (forming NASA) that culminated in the <strong>Apollo 11 Moon Landing
+                                (1969)</strong>, symbolically winning the "race" for the United States.</p>
+                    </div>
 
                     <div class="tech-grid">
                         <div class="tech-card">
@@ -836,6 +1068,10 @@
                             <p>The 1979 Soviet invasion of Afghanistan abruptly ended Detente, as the US funneled
                                 weapons to Afghan insurgents.</p>
                         </div>
+                    </div>
+
+                    <div class="interactive-embed" id="cold-war-alignment">
+                        <!-- Populated by JS: initColdWarAlignment() -->
                     </div>
 
                     <!-- SECTION 3: LATIN AMERICA & CUBA -->
@@ -932,8 +1168,12 @@
                         while Cambodia spiraled into genocide.</p>
 
                     <ul class="problem-list">
-                        <li class="problem-item"><strong>Afghanistan (1979–1989):</strong> The USSR invaded to
-                            support a communist government, facing a 10-year battle against US-backed insurgents.
+                        <li class="problem-item"><strong>The Soviet-Afghan War (1979–1989):</strong> Often called the
+                            "Soviet Vietnam," the USSR invaded to prop up a failing communist government. They were
+                            bogged down in a grueling 10-year asymmetric war against the
+                            <strong>Mujahideen</strong>—Islamic guerrilla fighters funded and armed with Stinger
+                            missiles by the US CIA. The economic drain and demoralization of this unwinnable war
+                            severely weakened the Soviet state.
                         </li>
                         <li class="problem-item"><strong>The Khmer Rouge:</strong> Led by Pol Pot, they unleashed a
                             reign of terror in Cambodia until Vietnam invaded in 1979 to end the genocide.</li>
@@ -1106,6 +1346,53 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <!-- SECTION 4.8: SOUTH AFRICA & APARTHEID -->
+                    <h2 id="u4.8">4.8 South Africa & The Fall of Apartheid</h2>
+                    <p class="section-intro">While many African nations gained independence in the 1960s, South Africa
+                        remained under the grip of a brutal system of institutionalized racial segregation and white
+                        supremacy known as <strong>Apartheid</strong> (meaning "apartness" in Afrikaans), implemented in
+                        1948 by the National Party.</p>
+
+                    <ul class="problem-list">
+                        <li class="problem-item"><strong>The System:</strong> Non-white South Africans were stripped of
+                            citizenship, forced to live in impoverished "Bantustans" (homelands), and required to carry
+                            passbooks. Interracial marriage was strictly criminalized.</li>
+                        <li class="problem-item"><strong>Resistance:</strong> The <strong>African National Congress
+                                (ANC)</strong>, led by figures like <strong>Nelson Mandela</strong>, initially used
+                            non-violent strikes. After the horrific <strong>Sharpeville Massacre (1960)</strong> where
+                            police killed 69 peaceful protesters, the ANC transitioned to armed sabotage. Mandela was
+                            subsequently imprisoned for 27 years.</li>
+                        <li class="problem-item"><strong>Global Pressure & Collapse:</strong> Following domestic
+                            uprisings (like the Soweto Uprising) and crippling international economic boycotts in the
+                            1980s, President F.W. de Klerk released Mandela. In 1994, Mandela was elected president in
+                            the nation's first fully democratic, multiracial election.</li>
+                    </ul>
+
+                    <!-- SECTION 4.9: RWANDA -->
+                    <h2 id="u4.9">4.9 The Legacy of Colonial Division: The Rwandan Genocide (1994)</h2>
+                    <p class="section-intro">The horrors in Rwanda demonstrate the fatal long-term consequences of
+                        European colonial strategies that artificially elevated one ethnic group over another.</p>
+
+                    <div class="ref-box" style="margin-bottom: 24px;">
+                        <h3 class="ref-title">The 100 Days of Slaughter</h3>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">During their colonial rule, Belgium
+                            issued ethnic identity cards, artificially formalizing the divide between the minority
+                            <strong>Tutsis</strong> (whom they favored and placed in power) and the majority
+                            <strong>Hutus</strong>. After independence, Hutu resentment boiled over into systemic
+                            violence. In 1994, following the assassination of the Hutu president, extreme Hutu
+                            nationalists launched a meticulously planned genocide. Over just <strong>100 days</strong>,
+                            approximately <strong>800,000 Tutsis and moderate Hutus were slaughtered</strong>, largely
+                            by machete-wielding militias (the <em>Interahamwe</em>) broadcasting hate speech over the
+                            radio. The international community, including the UN and the US, famously failed to
+                            intervene to stop the bloodshed.
+                        </p>
+                    </div>
+
+                    <div class="interactive-embed" id="independence-timeline">
+                        <!-- Populated by JS: initIndependenceTimeline() -->
+                    </div>
+
                     <div class="study-tips-section">
                         <div class="tips-header">
                             <div class="tips-icon">🎓</div>
@@ -1117,7 +1404,8 @@
                                 Settler populations often dictated the level of violence.</p>
                             <p><strong>Pan-Africanism:</strong> Nkrumah's vision of a unified Africa was a response to
                                 <strong>Neocolonialism</strong>—the belief that economic control by Western powers
-                                continued after political independence.</p>
+                                continued after political independence.
+                            </p>
                             <div class="tips-cta">Test Prep: The Decolonization unit focuses on leadership. Be sure you
                                 can distinguish between Kenyatta, Nkrumah, and Mandela.</div>
                         </div>
@@ -1132,133 +1420,239 @@
 
                 <!-- UNIT 5 -->
                 <section id="u5-india-china" class="content-section">
-                    <h1>Unit 5: India & China</h1>
+                    <h1>Unit 5: Post-1900 Asian History</h1>
 
                     <div class="unit-intro">
-                        <p>During the 20th century, the two most populous nations on Earth—China and India—followed
-                            radically different paths to modernization. China embraced violent communist revolution,
-                            while India pioneered non-violent resistance.</p>
+                        <p>During the 20th century, China and India followed radically different paths to modernization.
+                            China embraced violent communist revolution, while India pioneered non-violent resistance.
+                            Today, they stand as the world's two most populous nations with a complex, often tense,
+                            relationship.</p>
                     </div>
 
-                    <!-- CHINA -->
-                    <h2 id="u5.1">5.1 Collapse of the Qing & The Republic</h2>
-                    <p class="section-intro">After 2,000 years of imperial rule, the Qing Dynasty fell in 1911.
-                        <strong>Sun Yixian</strong>, the "Father of Modern China," established a fragile republic based
-                        on the "Three Principles of the People": Nationalism, Democracy, and Livelihood.
-                    </p>
+                    <h3 class="sub-sub-title">Setting the Asian Stage: Japan's Meiji Legacy</h3>
+                    <p style="margin-bottom: 24px;">To understand 20th-century Asia, one must examine the late
+                        19th-century <strong>Meiji Restoration</strong>. While China resisted Western industrialization,
+                        Japan rapidly modernized its economy, government, and military. This successful transformation
+                        created a powerful, industrialized Japanese Empire that desperately required raw materials. This
+                        need directly drove their brutal imperial expansion into Korea and China, ultimately setting the
+                        stage for the devastating Pacific theater of WWII.</p>
 
-                    <h2 id="u5.2">5.2 Mao Zedong & The Rise of Communism</h2>
-                    <p>While the Nationalists (Guomindang) focused on urban elites, <strong>Mao Zedong</strong> believed
-                        the true power of China lay in its vast peasant population. He argued that communists should
-                        treat peasants with respect to win their loyalty.</p>
+                    <!-- 5.1 COMMUNIST CHINA -->
+                    <h2 id="u5.1">5.1 The Rise of Communist China</h2>
+                    <p class="section-intro">From the collapse of the Qing Dynasty to the founding of the People's
+                        Republic, China underwent a violent, decades-long transformation fueled by internal division and
+                        Japanese invasion.</p>
 
                     <div class="tactical-grid">
                         <div class="tactical-step">
-                            <span class="step-num">EXILE</span>
-                            <span class="step-name">The Long March (1934)</span>
-                            <span class="step-desc">Mao led 100,000 communists on a 6,000-mile retreat to escape
-                                extermination. Only 20,000 survived, but it solidified Mao's leadership.</span>
+                            <span class="step-num">1911</span>
+                            <span class="step-name">Republic Founded</span>
+                            <span class="step-desc">Sun Yat-sen (Yixian) overthrows the Qing Dynasty, officially ending
+                                2,000 years of imperial rule to establish a fragile Republic based on Nationalism,
+                                Democracy, and Livelihood.</span>
                         </div>
                         <div class="tactical-step">
-                            <span class="step-num">INVASION</span>
-                            <span class="step-name">Japanese Aggression</span>
-                            <span class="step-desc">Japan's brutal invasion (e.g., The <strong
-                                    style="color: #ef4444;">Rape of Nanjing</strong>) forced Nationalists and Communists
-                                into a temporary truce.</span>
+                            <span class="step-num">1934</span>
+                            <span class="step-name">The Long March</span>
+                            <span class="step-desc">Fleeing Nationalist forces, Mao Zedong leads a grueling 6,000-mile
+                                military retreat. Of the 85,000 troops who began, only about 8,000 survived, but it
+                                secured Mao's undisputed leadership and the loyalty of the rural peasantry.</span>
                         </div>
                         <div class="tactical-step">
-                            <span class="step-num">VICTORY</span>
-                            <span class="step-name">People's Republic (1949)</span>
-                            <span class="step-desc">Mao's well-disciplined peasant army defeated the corrupt Nationalist
-                                forces, who fled to Taiwan.</span>
+                            <span class="step-num">1946-49</span>
+                            <span class="step-name">The Civil War</span>
+                            <span class="step-desc">Following WWII, full-scale civil war erupted. The Communists secured
+                                decisive victories at massive battles like the <strong>Huaihai Campaign</strong>,
+                                overwhelming Chiang Kai-shek's Nationalists (who fled to Taiwan) by relentlessly
+                                mobilizing millions of peasants with promises of land redistribution.</span>
                         </div>
                     </div>
 
-                    <h2 id="u5.3">5.3 Mao's Radical Policies</h2>
-                    <table class="history-table">
-                        <thead>
-                            <tr>
-                                <th>Policy</th>
-                                <th>Impact</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Great Leap Forward (1958)</strong></td>
-                                <td>Attempt to create "Backyard Furnaces" for steel. Resulted in low-quality steel and a
-                                    massive famine killing ~55 million.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Cultural Revolution (1966)</strong></td>
-                                <td>Mao mobilized the "Red Guards" (students) to destroy the "Four Olds" (customs,
-                                    culture, habits, ideas). Intellectuals were purged.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- 5.2 MAO'S POLICIES -->
+                    <h2 id="u5.2">5.2 Mao's Radical Policies (1958–1976)</h2>
+                    <p class="section-intro">Mao attempted to rapidly modernize China through mass mobilization, leading
+                        to both industrial growth and catastrophic human tragedy.</p>
 
                     <div class="tech-grid">
-                        <div class="tech-card">
-                            <h4>Four Modernizations</h4>
-                            <p>After Mao's death, <strong>Deng Xiaoping</strong> introduced capitalistic reforms in
-                                agriculture, industry, defense, and science, creating today's economic powerhouse.</p>
+                        <div class="tech-card" style="border-left: 4px solid #ef4444;">
+                            <h4>Great Leap Forward (1958-1962)</h4>
+                            <p>Aimed to magically bypass traditional industrialization via "Backyard Furnaces" and
+                                massive agricultural communes. It resulted in useless, brittle steel and caused the
+                                deadliest famine in human history, killing an estimated 15-45 million people.</p>
                         </div>
-                        <div class="tech-card">
-                            <h4>Tiananmen Square (1989)</h4>
-                            <p>While the economy opened up, political freedom did not. Pro-democracy students were
-                                crushed by tanks, signaling that the Party retains absolute control.</p>
+                        <div class="tech-card" style="border-left: 4px solid #ef4444;">
+                            <h4>Cultural Revolution (1966-1976)</h4>
+                            <p>Seeking to reassert his total dominance, Mao mobilized millions of radicalized youth into
+                                the <strong>Red Guards</strong> to purge "capitalist roaders" and destroy the "Four
+                                Olds" (ideas, culture, customs, habits). Intellectuals, teachers, and party officials
+                                were publicly humiliated, tortured, or killed. A decade of political chaos, decimated
+                                education systems, and ruined economic output ensued until Mao's death.</p>
                         </div>
                     </div>
 
-                    <!-- INDIA -->
-                    <h2 id="u5.4">5.4 India's Struggle for Independence</h2>
-                    <p class="section-intro">British rule in India (The Raj) was challenged by the educated middle
-                        class, forming the <strong>Indian National Congress</strong> (1885) and the <strong>Muslim
-                            League</strong> (1906). The turning point was the 1919 <strong>Amritsar Massacre</strong>,
-                        where British troops fired on a peaceful crowd.</p>
+                    <div class="interactive-embed" id="policy-consequences">
+                        <!-- Populated by JS: initPolicyConsequences() -->
+                    </div>
 
-                    <h2 id="u5.5">5.5 Gandhi's Satyagraha</h2>
-                    <p><strong>Mohandas Gandhi</strong> transformed the movement using <em>Satyagraha</em> ("Soul
-                        Force")—the active refusal to obey unjust laws without using violence.</p>
+                    <!-- 5.3 REFORM ERA -->
+                    <h2 id="u5.3">5.3 China Since 1976: Reform without Liberty</h2>
+                    <p class="section-intro">After Mao's death, <strong>Deng Xiaoping</strong> transformed China into an
+                        economic superpower while maintaining strict political control.</p>
+
                     <ul class="problem-list">
-                        <li class="problem-item"><strong>Civil Disobedience:</strong> Boycotts of British cloth
-                            (homespun movement) and the refusal to pay taxes.</li>
-                        <li class="problem-item"><strong>The Salt March (1930):</strong> A 240-mile march to the sea to
-                            make salt illegally, challenging the British monopoly. 60,000 were arrested, garnering
-                            global sympathy.</li>
+                        <li class="problem-item"><strong>Four Modernizations:</strong> Deng embraced foreign investment
+                            and private styling, arguing "It doesn't matter if a cat is black or white, so long as it
+                            catches mice."</li>
+                        <li class="problem-item"><strong>Tiananmen Square (1989):</strong> When students demanded
+                            political freedom to match economic freedom, Deng ordered a military crackdown, killing
+                            thousands.</li>
+                        <li class="problem-item"><strong>One-Child Policy:</strong> Prevented ~400 million births to
+                            boost development, but created a gender imbalance and a rapidly aging workforce.</li>
                     </ul>
 
-                    <h2 id="u5.6">5.6 Partition and Modern Challenges</h2>
-                    <div class="ref-box">
-                        <div class="ref-title">The Tragedy of Partition (1947)</div>
-                        <p style="margin: 0; font-size: 14px;">Independence brought violence. Unable to agree on a
-                            unified state, the British partitioned the land into Hindu-majority <strong>India</strong>
-                            and Muslim-majority <strong>Pakistan</strong>. 10 million people fled across borders in
-                            history's largest migration; 1 million died in the chaos. Gandhi himself was assassinated by
-                            a Hindu extremist for being "too soft" on Muslims.</p>
+                    <!-- 5.4 INDIA -->
+                    <h2 id="u5.4">5.4 The Evolution of Modern India</h2>
+                    <p class="section-intro">India's path to independence was paved by <strong>Mahatma Gandhi</strong>'s
+                        philosophy of <em>Satyagraha</em> (truth-force) and non-violent civil disobedience.</p>
+
+                    <div class="cause-card">
+                        <h3 class="cause-title"><span class="cause-letter">G</span> Gandhi's Strategy</h3>
+                        <p>Gandhi united the masses by linking independence to social justice. He fought for the
+                            "Untouchables" (Dalits), women's rights, and economic self-reliance (symbolized by the
+                            spinning wheel).</p>
                     </div>
 
-                    <h2 id="u5.7">5.7 Modern India</h2>
-                    <p>Under Nehru and his successors, India became the world's largest democracy. The "Green
-                        Revolution" in the 1960s solved chronic famine, and today India is a global leader in
-                        Information Technology (IT) and space exploration.</p>
-                    <div class="study-tips-section">
-                        <div class="tips-header">
-                            <div class="tips-icon">🎓</div>
-                            <div class="tips-title">Quick Study: India & China</div>
+                    <p><strong>Post-Independence:</strong> Following the traumatic 1947 Partition (creating Pakistan),
+                        India became the world's largest democracy. It has since developed a massive tech sector while
+                        grappling with poverty and religious tensions.</p>
+
+                    <!-- 5.5 KOREA -->
+                    <h2 id="u5.5">5.5 The Korean Peninsula</h2>
+                    <p class="section-intro">Divided after WWII, the peninsula remains technically at war.</p>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>North Korea</h4>
+                            <p>A hereditary dictatorship built on <em>Juche</em> (self-reliance), heavily militarized
+                                and isolated.</p>
                         </div>
-                        <div class="tips-content">
-                            <p><strong>Methods of Revolution:</strong> Compare Gandhi's <strong>Satyagraha</strong>
-                                (soul force/non-violence) with Mao's belief that power comes from "a gun barrel". These
-                                conflicting philosophies define the 20th century in Asia.</p>
-                            <p><strong>Legacy of Partition:</strong> The 1947 division of India and Pakistan remains one
-                                of history's most significant human migrations and a source of modern nuclear tension.
-                            </p>
-                            <p><strong>China's Great Leaps:</strong> Contrast the failure of the <strong>Great Leap
-                                    Forward</strong> with the economic success of <strong>Deng Xiaoping's</strong> Four
-                                Modernizations.</p>
-                            <div class="tips-cta">Don't Forget: Use the Navigator to jump back to the 'Long March'
-                                question—it's a common point of confusion with the Salt March!</div>
+                        <div class="tech-card">
+                            <h4>South Korea</h4>
+                            <p>The "Miracle on the Han" transformed from poverty to a high-tech global economic
+                                powerhouse.</p>
                         </div>
+                    </div>
+
+                    <!-- 5.6 DBQ SECTION -->
+                    <h2 id="u5.6">5.6 DBQ: The India-China Border Dispute</h2>
+                    <div class="unit-intro" style="background: #f0f9ff; border-left-color: #0c4a6e;">
+                        <p><strong>Historical Context:</strong> The India-China border dispute is a legacy of colonial
+                            cartography (the 1914 McMahon Line) and Cold War geopolitics. While the 1962 War was the
+                            first major conflict, the region remains a "powder keg" where the world's two largest armies
+                            stare each other down in the Himalayas.</p>
+                    </div>
+
+                    <div class="quote-card">
+                        <p class="quote-text">Evaluate the national, regional and global impact of the China/India
+                            Border Dispute.</p>
+                        <span class="quote-author">DBQ Task</span>
+                    </div>
+
+                    <h3 class="sub-sub-title">Part I: Historical Grievances</h3>
+
+                    <div class="doc-card">
+                        <h5>Document 1 <span style="float:right;">Map</span></h5>
+                        <div class="doc-content">
+                            <p>A map showing the disputed territories: Aksai Chin in the West (controlled by China,
+                                claimed by India) and Arunachal Pradesh in the East (controlled by India, claimed by
+                                China).</p>
+                        </div>
+                        <span class="doc-source">Source: SCMP, "China-India Border Dispute Origins"</span>
+                    </div>
+
+                    <div class="dbq-tip">
+                        <div class="dbq-tip-icon">💡</div>
+                        <div class="dbq-tip-content">
+                            <strong>Study Tip:</strong> Note the geography. These are high-altitude regions. Control
+                            here isn't just about land; it's about strategic high ground and access to water resources.
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <h5>Document 6 <span style="float:right;">Secondary Source</span></h5>
+                        <div class="doc-content">
+                            <p>New York Times analysis from 1958 discussing the early tensions.</p>
+                        </div>
+                        <span class="doc-source">Source: NYT, 1958</span>
+                    </div>
+
+                    <div class="doc-card">
+                        <h5>Document 7 <span style="float:right;">Primary Source</span></h5>
+                        <div class="doc-content">
+                            <p><strong>Memo to President Kennedy (1962):</strong> "The Chinese have occupied some
+                                inhabited places... Soviets told Nehru they couldn't intercede... We are prepared to
+                                help the Indians with arms... recognize the McMahon line."</p>
+                        </div>
+                        <span class="doc-source">Source: US State Dept. Historical Documents</span>
+                    </div>
+
+                    <div class="dbq-tip">
+                        <div class="dbq-tip-icon">💡</div>
+                        <div class="dbq-tip-content">
+                            <strong>Analysis Tip:</strong> Look at the date (1962) and the players. This is the Cold
+                            War. Why is the US supporting India? Because China and the USSR had split, and the US wanted
+                            a regional ally against communism.
+                        </div>
+                    </div>
+
+                    <h3 class="sub-sub-title">Part II: Modern Escalation</h3>
+
+                    <div class="doc-card">
+                        <h5>Document 2 <span style="float:right;">News Report</span></h5>
+                        <div class="doc-content">
+                            <p>"China is building a bridge across the Pangong Lake... raising fresh security concerns in
+                                India. The 400-metre-long bridge... was spotted through high resolution satellite
+                                images."</p>
+                        </div>
+                        <span class="doc-source">Source: Al Jazeera, 2022</span>
+                    </div>
+
+                    <div class="doc-card">
+                        <h5>Document 3 <span style="float:right;">Primary Source</span></h5>
+                        <div class="doc-content">
+                            <p><strong>PM Narendra Modi:</strong> "The sovereignty and integrity of India is supreme,
+                                and nobody can stop us in defending that... India wants peace, but if provoked India is
+                                capable of giving a befitting reply."</p>
+                        </div>
+                        <span class="doc-source">Source: Televised Speech, June 2020</span>
+                    </div>
+
+                    <div class="doc-card">
+                        <h5>Document 10 <span style="float:right;">Analysis</span></h5>
+                        <div class="doc-content">
+                            <p>"China perceived the constitutional changes in Jammu and Kashmir a threat to Chinese
+                                interests... specifically infrastructure projects linking China with Pakistan (Belt and
+                                Road)."</p>
+                        </div>
+                        <span class="doc-source">Source: AP News, 2020</span>
+                    </div>
+
+                    <div class="dbq-tip">
+                        <div class="dbq-tip-icon">💡</div>
+                        <div class="dbq-tip-content">
+                            <strong>Global Connection:</strong> Document 10 connects the border dispute to the "Belt and
+                            Road Initiative." This moves the conflict from a local land grab to a threat against China's
+                            global commercial strategy.
+                        </div>
+                    </div>
+
+                    <div class="doc-card">
+                        <h5>Document 12 <span style="float:right;">Diplomatic Cable</span></h5>
+                        <div class="doc-content">
+                            <p><strong>Chinese Embassy Spokesperson:</strong> "The US side has made allegations against
+                                China... without any factual basis. We hope the US could do more things that contribute
+                                to regional peace... instead of pointing fingers."</p>
+                        </div>
+                        <span class="doc-source">Source: Hindustan Times, 2023</span>
                     </div>
 
                     <div class="quiz-button-container" style="margin-top: 24px; text-align: center;">
@@ -1269,14 +1663,190 @@
                 </section>
 
                 <section id="u6-middle-east" class="content-section">
-                    <h1>Unit 6: Middle East</h1>
-                    <h2 id="u6.1">6.1 Ottoman Challenges & Transitions</h2>
+                    <h1>Unit 6: The Middle East in the Modern Era</h1>
+
+                    <div class="unit-intro">
+                        <p>The modern Middle East is characterized by a complex interplay of nationalism, religious
+                            ideology (Secularism vs. Theocracy), external intervention for oil wealth, and deep-seated
+                            territorial disputes. This unit explores the defining conflicts and movements from the fall
+                            of the Ottoman Empire to the events of September 11, 2001.</p>
+                    </div>
+
+                    <h2 id="u6.1">6.1 Ottoman Challenges, Nationalism, & Wealth</h2>
                     <ul class="problem-list">
-                        <li class="problem-item">The once-powerful Ottoman Empire faced decline due to internal ethnic
-                            diversity and external European pressure.</li>
-                        <li class="problem-item">Post-war regional changes led to the formation of new national
-                            identities and modern state borders.</li>
+                        <li class="problem-item"><strong>Ottoman Decline:</strong> The once-powerful Ottoman Empire
+                            faced decline due to internal ethnic diversity and external European pressure. Post-WWII
+                            regional changes led to new national identities.</li>
+                        <li class="problem-item"><strong>Arab Nationalism / Pan-Arabism:</strong> A 20th-century
+                            political and cultural ideology advocating for the unity and independence of countries in
+                            the Middle East, resisting British and Western control.</li>
+                        <li class="problem-item"><strong>Zionism:</strong> A modern political and nationalist movement
+                            founded in the late 19th century by Theodore Herzl. Its primary goal was to establish a
+                            Jewish national state in Palestine due to historical ties and increasing persecution
+                            (intensified by the Holocaust).</li>
+                        <li class="problem-item"><strong>Oil Discovery & Western Intervention:</strong> In the 1800s,
+                            oil was discovered in the Middle East. Western powers (especially Britain) traded heavily,
+                            making regional leaders extremely rich but fostering resentment among the populace. External
+                            powers often installed leaders lacking local legitimacy.</li>
                     </ul>
+
+                    <h2 id="u6.2">6.2 Governance Models: Secularism vs. Theocracy</h2>
+                    <p class="section-intro">The region was divided by competing visions of governance: modern secular
+                        states versus rule by religious mandate.</p>
+
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Turkey (Secularism)</h4>
+                            <p><strong>Mustafa Kemal (Atatürk)</strong> aimed to modernize and westernize Turkey out of
+                                the ashes of the Ottoman Empire. He firmly believed in <strong>Secularism</strong>
+                                (separation of state and religion). Viewing societal corruption as a barrier to
+                                progress, he aggressively enforced assimilation, democracy, and meritocracy—often using
+                                authoritarian means to suppress opposition.</p>
+                        </div>
+                        <div class="tech-card" style="border-left: 4px solid var(--primary);">
+                            <h4>Iran (Theocracy)</h4>
+                            <p><strong>Theocracy</strong> is rule by religious leaders acting under divine authority.
+                                Iran was ruled by the U.S.-backed, wealthy <strong>Shah Mohammad Reza Pahlavi</strong>,
+                                who pushed Westernization but was seen as corrupt. In 1979, the <strong>Iranian
+                                    Revolution</strong>—a largely non-violent popular uprising led by <strong>Ayatollah
+                                    Ruhollah Khomeini</strong>—overthrew the Shah. It established an Islamic Republic,
+                                uniting diverse factions against Western influence.</p>
+                        </div>
+                    </div>
+
+                    <h2 id="u6.3">6.3 The Israel-Palestine Conflict: Origins</h2>
+                    <p class="section-intro">Tensions between Jewish immigrants and Arab populations in the British
+                        Mandate for Palestine escalated into full-scale conflict following WWII.</p>
+                    <ul class="problem-list">
+                        <li class="problem-item"><strong>The British Mandate:</strong> After WWI, Britain promised a
+                            "Jewish national home" (Balfour Declaration) while also recognizing Arab desires for
+                            independence. East of the Jordan River became Transjordan, where Jewish settlement was
+                            prohibited. In Palestine, Zionist Jews built kibbutzim and towns, sparking Arab riots in the
+                            1920s and a revolt in 1936.</li>
+                        <li class="problem-item"><strong>Failed Diplomacy:</strong> The 1937 Peel Commission proposed
+                            partition, rejected by both sides. The 1939 British White Paper restricted Jewish
+                            immigration right as WWII began.</li>
+                        <li class="problem-item"><strong>UN Partition Plan (Resolution 181):</strong> With the region in
+                            turmoil, Britain handed the issue to the UN (UNSCOP). The UN proposed splitting Palestine
+                            into independent Arab and Jewish states with Jerusalem as an international zone. Jewish
+                            leaders accepted; the Arab League rejected it because Palestinians were more numerous and
+                            felt they received inferior land.</li>
+                        <li class="problem-item"><strong>1948 War of Independence (The Nakba):</strong> Following a
+                            Muslim revolt, British forces withdrew. David Ben-Gurion announced the State of Israel with
+                            US and Soviet support. Surrounding Arab states attacked. Israel expanded into the West Bank
+                            (incorporated by Jordan) and Jerusalem was divided. The Gaza Strip was administered by
+                            Egypt.</li>
+                    </ul>
+
+                    <h2 id="u6.4">6.4 Egypt, Israel, and the Decades of War</h2>
+                    <p class="section-intro">Between 1956 and 1973, Israel and its Arab neighbors fought a series of
+                        defining wars, deeply entangled in Cold War politics.</p>
+
+                    <div class="tactical-grid">
+                        <div class="tactical-step">
+                            <span class="step-num">1956</span>
+                            <span class="step-name">The Suez Crisis</span>
+                            <span class="step-desc">Egypt's Nasser armed via the Soviet bloc, prompting the US to pull
+                                funding for the Aswan Dam. Israel attacked the Sinai; Britain and France intervened to
+                                seize the Suez Canal, but political pressure forced them out.</span>
+                        </div>
+                        <div class="tactical-step">
+                            <span class="step-num">1967</span>
+                            <span class="step-name">Six-Day War</span>
+                            <span class="step-desc">Tensions over the Strait of Tiran led to war. Israel captured the
+                                Sinai Peninsula and Gaza Strip from Egypt, the West Bank from Jordan, and Golan Heights
+                                from Syria.</span>
+                        </div>
+                        <div class="tactical-step">
+                            <span class="step-num">1973</span>
+                            <span class="step-name">Yom Kippur War</span>
+                            <span class="step-desc">Anwar Sadat launched a surprise attack to retake the Sinai. While
+                                not a decisive military victory for Egypt, it brought international pressure (due to
+                                rising gas prices) and forced negotiations.</span>
+                        </div>
+                    </div>
+
+                    <div class="ref-box">
+                        <div class="ref-title">The Camp David Accords (1979)</div>
+                        <p style="margin: 0; font-size: 14px;">Seeking economic stability and US aid, Anwar Sadat met
+                            with Israeli Prime Minister Menachem Begin, mediated by US President Jimmy Carter. They
+                            achieved a historic peace treaty returning the Sinai to Egypt, though it ignored the core
+                            issue of a Palestinian homeland. Sadat was ostracized by the Arab world and assassinated in
+                            1981 by Islamic radicals.</p>
+                    </div>
+
+                    <div class="interactive-embed" id="conflict-mapper">
+                        <!-- Populated by JS: initConflictMapper() -->
+                    </div>
+
+                    <h2 id="u6.5">6.5 The PLO and the Conflict in Lebanon</h2>
+                    <ul class="problem-list">
+                        <li class="problem-item"><strong>Rise of the PLO:</strong> Palestinian guerrilla groups like
+                            al-Fatah and the PLO, led by Yasser Arafat, emerged. They launched the <em>Intifada</em>
+                            (uprising), utilizing bombings and hijackings viewed by the West as terrorism.</li>
+                        <li class="problem-item"><strong>Relocation to Lebanon:</strong> Originally strong in Jordan,
+                            King Hussein cracked down, forcing the PLO to relocate to Southern Lebanon by 1970 to launch
+                            attacks on Israel.</li>
+                        <li class="problem-item"><strong>1982 Lebanon War:</strong> Calling it a "state within a state,"
+                            Israel invaded Lebanon to destroy the PLO. Thousands of civilians died; Beirut became the
+                            symbol of the conflict. The assassination of Christian Lebanese leader Bashir Gemayel in
+                            1982 sparked the massacre of Palestinians in the Sabra and Shatila refugee camps.</li>
+                    </ul>
+
+                    <h2 id="u6.6">6.6 Persian Gulf Conflicts: Iran and Iraq</h2>
+                    <p class="section-intro">As Iran became an Islamic Republic, its neighbors and the West feared the
+                        spread of its strict theocratic revolution.</p>
+
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Iran-Iraq War (1980–1988)</h4>
+                            <p>Nationalist Iraqi leader <strong>Saddam Hussein</strong> invaded Iran to seize oil fields
+                                and halt the spread of Khomeini's revolution. The US, Arab nations, Israel, and USSR
+                                backed Iraq to varying degrees (though the West secretly armed Iran too, prolonging the
+                                war). It ended in an armistice with over 1 million dead. Saddam emerged angry that Gulf
+                                states wouldn't forgive his debts.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>First Persian Gulf War (1990–1991)</h4>
+                            <p>Claiming Kuwait was slant-drilling Iraqi oil, Saddam Hussein invaded Kuwait. The US, Arab
+                                nations, and the UN vehemently condemned it. A massive US-led coalition initiated an
+                                aerial bombardment and swiftly pushed Iraqi forces out of Kuwait. Saddam remained in
+                                power due to UN restrictions on regime change.</p>
+                        </div>
+                    </div>
+
+                    <h2 id="u6.7">6.7 The Rise of Al-Qaeda & 9/11</h2>
+                    <p class="section-intro">The legacy of Western intervention and military bases in the Middle
+                        East—particularly in the Persian Gulf after 1991—fueled extremist backlash.</p>
+
+                    <p><strong>Osama bin Laden</strong> belonged to a wealthy Saudi family. Radicalized early on, he
+                        fought against the USSR in Afghanistan. Angered by the post-Gulf War presence of US military
+                        bases in Saudi Arabia (the holy land) and perceiving American culture as poisonous, he founded
+                        the Sunni terrorist organization <strong>al-Qaeda</strong>.</p>
+
+                    <ul class="problem-list">
+                        <li class="problem-item"><strong>The Intelligence Failure:</strong> In the US, counter-terrorism
+                            official Richard Clarke pushed for aid to the Northern Alliance's Shah Massoud to fight
+                            al-Qaeda. FBI's John O'Neill understood the severe threat but was stymied by inter-agency
+                            rivalries. "Rule 6E" prevented the CIA from sharing vital intelligence. O'Neill eventually
+                            retired to work security at the WTC. <strong>Furthermore, a poem was publicly read as a
+                                tribute to the USS Cole Bombing by bin Laden, with supporters shouting out
+                                praise—indicating the rising danger. A few months after W. Bush was inaugurated, Clarke
+                                met with Condoleezza Rice and the President to brief them over al-Qaeda. Rice demoted
+                                Clarke and acted as if she had never heard of al-Qaeda.</strong> Osama bin Laden, the
+                            founder of al-Qaeda, had masterminded these escalating attacks and the impending 9/11 plot.
+                        </li>
+                        <li class="problem-item"><strong>Al-Qaeda Consolidates:</strong> In June 2001, al-Qaeda absorbed
+                            the Egyptian al-Jihad (led by Ayman al-Zawahiri). The Taliban promised bin Laden safe haven
+                            if he assassinated Shah Massoud. Massoud was killed by fake journalists on September 9,
+                            2001.</li>
+                        <li class="problem-item"><strong>The September 11 Attacks:</strong> Ignoring warnings from Egypt
+                            and the NSA, the US was caught off guard. On September 11, hijackers crashed American Flight
+                            11 and United Flight 175 into the World Trade Center towers, causing their collapse. A third
+                            plane hit the Pentagon, and a fourth crashed in Shanksville, PA. 2,996 people died,
+                            including John O'Neill, permanently altering global security.</li>
+                    </ul>
+
                     <div class="study-tips-section">
                         <div class="tips-header">
                             <div class="tips-icon">🎓</div>
@@ -1284,65 +1854,127 @@
                         </div>
                         <div class="tips-content">
                             <p><strong>The Post-Empire Vacuum:</strong> The fall of the Ottoman Empire created a power
-                                vacuum that European powers tried to fill. Modern Middle Eastern borders are often
-                                'artificial' lines drawn in 1919-1920.</p>
-                            <p><strong>Nationalism vs. Globalism:</strong> Watch how regional identities clash with
-                                late-20th-century global political interests, especially regarding resources (oil) and
-                                strategic location.</p>
-                            <div class="tips-cta">Key Takeaway: You cannot understand the modern Middle East without
-                                understanding the collapse of Ottoman authority after WWI.</div>
+                                vacuum. Modern Middle Eastern borders are often 'artificial' lines drawn in 1919-1920.
+                            </p>
+                            <p><strong>Nationalism vs. Globalism:</strong> Watch how regional identities (Arab
+                                Nationalism, Zionism) clash with globalization, especially regarding resources (oil
+                                wealth) and strategic location.</p>
+                            <p><strong>Ideology & Proxy Conflict:</strong> Differentiate between the secular
+                                modernization of Atatürk in Turkey and the theocratic revolution of Khomeini in Iran.
+                                Understand how the Iran-Iraq War and Arab-Israeli conflicts became proxy battlegrounds
+                                for the Cold War and Western interests.</p>
+                            <div class="tips-cta">Key Takeaway: The modern Middle East is defined by the clash between
+                                national movements and competing visions of governance, heavily impacted by Western
+                                intervention and terrorism leading up to 9/11.</div>
                         </div>
                     </div>
-            </div>
-            </section>
+                </section>
 
-            <section id="u7-latin-america" class="content-section">
-                <h1>Unit 7: Latin America</h1>
-                <h2 id="u7.1">7.1 Cuban Revolution & Fidel Castro</h2>
-                <ul class="problem-list">
-                    <li class="problem-item"><strong>Fidel Castro & Che Guevara:</strong> Overthrew the Batista
-                        dictatorship (1959); Castro nationalized US assets, causing an immediate embargo.</li>
-                    <li class="problem-item"><strong>Bay of Pigs (1961):</strong> A failed CIA-backed invasion by
-                        exiles that pushed Cuba closer to the Soviet Union.</li>
-                </ul>
-                <h2 id="u7.2">7.2 Missile Crisis Impact</h2>
-                <ul class="problem-list">
-                    <li class="problem-item">The threat of Soviet nuclear bases on the island led to a US naval
-                        blockade by Kennedy; it was the closest the world came to nuclear war.</li>
-                </ul>
-                <div class="study-tips-section">
-                    <div class="tips-header">
-                        <div class="tips-icon">🎓</div>
-                        <div class="tips-title">Study Guide: Latin America</div>
+                <section id="u7-latin-america" class="content-section">
+                    <h1>Unit 7: Latin America in the 20th Century</h1>
+
+                    <h2 id="u7.1">7.1 The Mexican Revolution (1910-1920)</h2>
+                    <p class="section-intro">The first major social revolution of the 20th century sought to overthrow
+                        the elitist dictatorship of Porfirio Díaz and address extreme wealth inequality and foreign land
+                        ownership.</p>
+                    <ul class="problem-list">
+                        <li class="problem-item"><strong>Key Figures:</strong> Peasant leaders like <strong>Emiliano
+                                Zapata</strong> (who demanded "Land and Liberty" for indigenous farmers) and
+                            <strong>Pancho Villa</strong> led powerful agrarian armies.
+                        </li>
+                        <li class="problem-item"><strong>The 1917 Constitution:</strong> A radically progressive
+                            document that promised extensive land reform, workers' rights (unions, 8-hour workdays), and
+                            strictly limited foreign ownership of Mexican resources (subsoil rights).</li>
+                    </ul>
+
+                    <h2 id="u7.2">7.2 Cold War Interventions & The "Backyard"</h2>
+                    <p class="section-intro">Viewing Latin America as its exclusive sphere of influence (the legacy of
+                        the Monroe Doctrine), the US routinely intervened—often violently—to overthrow democratically
+                        elected reformist governments it suspected of communist sympathies.</p>
+                    <div class="tech-grid">
+                        <div class="tech-card">
+                            <h4>Guatemala (1954)</h4>
+                            <p>President Jacobo Árbenz instituted land reforms that threatened the profits of the
+                                US-based <strong>United Fruit Company</strong>. In response, the CIA orchestrated a coup
+                                (Operation PBSUCCESS) to overthrow him, installing a right-wing military dictatorship
+                                and triggering a 36-year brutal civil war.</p>
+                        </div>
+                        <div class="tech-card">
+                            <h4>Chile (1973)</h4>
+                            <p>Salvador Allende, a democratically elected socialist Marxist, nationalized US-owned
+                                copper mines. On September 11, 1973, with CIA backing, General <strong>Augusto
+                                    Pinochet</strong> launched a violent military coup. Allende died, and Pinochet
+                                established a brutal dictatorship, executing and torturing thousands of leftists.</p>
+                        </div>
                     </div>
-                    <div class="tips-content">
-                        <p><strong>Cold War Proximity:</strong> For Latin America, the Cold War wasn't just a global
-                            struggle; it was 'in the backyard'. The Cuban Missile Crisis shows how a local
-                            revolution can escalate into a global nuclear threat.</p>
-                        <p><strong>Sovereignty vs. Influence:</strong> Focus on the struggle between local reform
-                            movements (like Castro's) and the massive geopolitical influence of the United States.
-                            This tension defines much of 20th-century Latin American history.</p>
-                        <div class="tips-cta">Summary Idea: The region became a laboratory for Cold War ideologies
-                            and containment policies.</div>
+
+                    <h2 id="u7.3">7.3 The Cuban Revolution & Missile Crisis</h2>
+                    <ul class="problem-list">
+                        <li class="problem-item"><strong>Fidel Castro & Che Guevara:</strong> Overthrew the corrupt,
+                            US-backed Batista dictatorship in 1959. Castro immediately nationalized foreign-owned
+                            assets, resulting in a crippling, decades-long US economic embargo.</li>
+                        <li class="problem-item"><strong>Bay of Pigs (1961):</strong> A failed CIA-backed invasion by
+                            Cuban exiles that fundamentally pushed Castro to seek military protection from the Soviet
+                            Union.</li>
+                        <li class="problem-item"><strong>Missile Crisis Impact:</strong> The resulting threat of Soviet
+                            nuclear bases on the island led to a tense US naval blockade by Kennedy—bringing the world
+                            to the brink of mutually assured destruction in 1962.</li>
+                    </ul>
+
+                    <h2 id="u7.4">7.4 State Terror: Argentina's "Dirty War" (1976-1983)</h2>
+                    <p class="section-intro">Across South America, right-wing military juntas utilized state terrorism
+                        to eradicate left-wing political dissidents, often coordinating through Operation Condor.</p>
+                    <div class="ref-box" style="margin-bottom: 24px;">
+                        <h3 class="ref-title">The Disappeared (Los Desaparecidos)</h3>
+                        <p style="margin: 0; font-size: 14px; line-height: 1.6;">In Argentina, the military junta waged
+                            a covert "Dirty War" against its own citizens. An estimated <strong>30,000 students, union
+                                leaders, and activists</strong> were kidnapped, tortured in secret detention centers,
+                            and executed—often by being sedated and thrown out of airplanes over the Atlantic Ocean
+                            ("death flights"). The <strong>Mothers of the Plaza de Mayo</strong> famously risked their
+                            lives by marching weekly in Buenos Aires to demand the truth about their missing children.
+                        </p>
+                    </div>
+
+                    <div class="interactive-embed" id="revolution-match">
+                        <!-- Populated by JS: initRevolutionMatch() -->
+                    </div>
+
+                    <div class="study-tips-section">
+                        <div class="tips-header">
+                            <div class="tips-icon">🎓</div>
+                            <div class="tips-title">Study Guide: Latin America</div>
+                        </div>
+                        <div class="tips-content">
+                            <p><strong>Cold War Proximity:</strong> For Latin America, the Cold War wasn't just a global
+                                struggle; it was 'in the backyard'. The Cuban Missile Crisis shows how a local
+                                revolution can escalate into a global nuclear threat.</p>
+                            <p><strong>Sovereignty vs. Influence:</strong> Focus on the struggle between local reform
+                                movements (like Castro's or Árbenz's) and the massive geopolitical influence of the
+                                United States.
+                                This tension defines much of 20th-century Latin American history.</p>
+                            <div class="tips-cta">Summary Idea: The region became a laboratory for Cold War ideologies
+                                and containment policies.</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="doc-footer">
+                <div class="footer-content">
+                    <span>&copy; 2026 Vihari Battula. All rights reserved.</span>
+                    <div class="footer-links">
+                        <a href="https://activestem.org" target="_blank">ActiveSTEM.org</a>
+                        <a href="#">Contact</a>
                     </div>
                 </div>
-            </section>
+            </footer>
 
+        </main>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="doc-footer">
-        <div class="footer-content">
-            <span>&copy; 2026 Vihari Battula. All rights reserved.</span>
-            <div class="footer-links">
-                <a href="https://activestem.org" target="_blank">ActiveSTEM.org</a>
-                <a href="#">Contact</a>
-            </div>
-        </div>
-    </footer>
 
-    </main>
-    </div>
 
     <script src="script.js"></script>
 </body>
