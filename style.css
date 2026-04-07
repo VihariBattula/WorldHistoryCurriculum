@@ -584,6 +584,8 @@ hr.custom-hr {
   body {
     height: auto;
     overflow: visible;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .header,
