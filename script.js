@@ -612,6 +612,105 @@ document.addEventListener('DOMContentLoaded', () => {
   initRevolutionMatch();
 });
 
+// ========== ESSAY PROMPT BUILDER (Hub Game) ==========
+const essayThemes = [
+  { theme: "Decolonization", prompt: "Evaluate the extent to which economic struggles undermined the political sovereignty of newly independent African nations in the late 20th century.", docs: ["Kwame Nkrumah's speeches", "Neocolonialism definitions", "Post-1960 GDP statistics for Ghana/Kenya"] },
+  { theme: "Cold War Imperialism", prompt: "Compare and contrast the methods used by the United States and the Soviet Union to maintain their respective spheres of influence in Latin America and Eastern Europe.", docs: ["Monroe Doctrine / Roosevelt Corollary", "Brezhnev Doctrine", "CIA operations in Guatemala/Chile"] },
+  { theme: "Middle East Geopolitics", prompt: "Analyze the shifting role of religion versus secular nationalism in shaping state formation and conflict in the Middle East from 1914 to 2000.", docs: ["Balfour Declaration", "Atatürk's reforms", "Iranian Revolution of 1979"] },
+  { theme: "Global Conflicts", prompt: "To what extent did the Treaty of Versailles establish the conditions necessary for the outbreak of the Second World War?", docs: ["Article 231 (War Guilt Clause)", "Rise of the Nazi Party platform", "Appeasement policies (Munich Conference)"] },
+  { theme: "Asian Modernization", prompt: "Evaluate the consequences of forced modernization policies in 20th-century Communist China.", docs: ["Great Leap Forward statistics", "Cultural Revolution manifestos", "Deng Xiaoping's Four Modernizations"] }
+];
+
+function startEssayBuilder() {
+  const container = document.getElementById('game-container');
+  if (!container) return;
+  container.style.display = 'block';
+  container.innerHTML = `
+    <div class="embed-header"><span class="embed-icon">📝</span> Essay Prompt Builder <button onclick="document.getElementById('game-container').style.display='none'" class="btn-reveal" style="font-size:12px;padding:4px 8px;min-height:0;margin-left:auto;">Close</button></div>
+    <p class="embed-desc">Select a historical theme to generate a rigorous essay prompt, complete with recommended research areas.</p>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;">
+      ${essayThemes.map((t, idx) => `<button class="embed-check-btn" style="background:#475569;" onclick="generateEssayPrompt(${idx})">${t.theme}</button>`).join('')}
+    </div>
+    <div id="essay-result-area" style="display:none; background:#f8fafc; padding:20px; border-left:4px solid var(--primary); border-radius:8px;"></div>
+  `;
+  container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function generateEssayPrompt(index) {
+  const t = essayThemes[index];
+  const res = document.getElementById('essay-result-area');
+  res.style.display = 'block';
+  res.innerHTML = `
+    <h4 style="margin:0 0 12px 0; color:var(--primary); font-size:18px;">${t.theme}</h4>
+    <p style="font-size:16px; font-weight:600; color:var(--ink); line-height:1.6; margin-bottom:16px;">" ${t.prompt} "</p>
+    <div>
+      <strong style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em;">Recommended Evidence to Include:</strong>
+      <ul style="margin-top:8px; padding-left:20px;">
+        ${t.docs.map(doc => `<li style="font-size:14px; margin-bottom:4px;">${doc}</li>`).join('')}
+      </ul>
+    </div>
+  `;
+}
+
+// ========== GLOBAL INTERACTIVE TIMELINE ==========
+const globalTimeline = [
+  { year: 1914, title: "WWI Begins", desc: "Assassination of Archduke Franz Ferdinand ignites European alliances." },
+  { year: 1917, title: "Russian Revolution", desc: "Bolsheviks overthrow the Tsar, establishing the first communist state." },
+  { year: 1939, title: "WWII Begins", desc: "Germany invades Poland; Britain and France declare war." },
+  { year: 1945, title: "Atomic Age", desc: "US drops atomic bombs on Hiroshima and Nagasaki. Cold War begins." },
+  { year: 1947, title: "Partition of India", desc: "India gains independence from Britain and is partitioned into India and Pakistan." },
+  { year: 1956, title: "Suez Crisis", desc: "Egypt nationalizes the Suez Canal, signaling the end of British imperial power in the Middle East." },
+  { year: 1959, title: "Cuban Revolution", desc: "Fidel Castro overthrows the Batista regime, establishing a communist state 90 miles from the US." },
+  { year: 1962, title: "Cuban Missile Crisis", desc: "World faces imminent nuclear war over Soviet missiles in Cuba." },
+  { year: 1979, title: "Iranian Revolution", desc: "Ayatollah Khomeini establishes an Islamic theocracy, shifting Middle Eastern power dynamics." },
+  { year: 1989, title: "Fall of Berlin Wall", desc: "Symbolic end of the Iron Curtain, leading to the collapse of the Soviet Union in 1991." },
+  { year: 1994, title: "End of Apartheid", desc: "Nelson Mandela elected as South Africa's first Black president." },
+  { year: 2001, title: "9/11 Attacks", desc: "Al-Qaeda launches coordinated terrorist attacks in the US, sparking the Global War on Terror." }
+];
+
+let currentTimelineIndex = 0;
+
+function startTimelineInteractive() {
+  const container = document.getElementById('game-container');
+  if (!container) return;
+  container.style.display = 'block'; currentTimelineIndex = 0;
+  
+  container.innerHTML = `
+    <div class="embed-header"><span class="embed-icon">⏳</span> Global Chronology Timeline <button onclick="document.getElementById('game-container').style.display='none'" class="btn-reveal" style="font-size:12px;padding:4px 8px;min-height:0;margin-left:auto;">Close</button></div>
+    <p class="embed-desc">Slide through the defining moments of the 20th Century across all units.</p>
+    <div style="background:#1e293b; color:white; padding:32px; border-radius:12px; text-align:center; position:relative; min-height:200px; display:flex; flex-direction:column; justify-content:center;">
+       <div id="tl-year" style="font-size:48px; font-weight:700; color:#ef4444; font-family:var(--mono);"></div>
+       <div id="tl-title" style="font-size:24px; font-family:var(--serif); margin:12px 0;"></div>
+       <div id="tl-desc" style="font-size:16px; color:#cbd5e1; max-width:500px; margin:0 auto; line-height:1.6;"></div>
+    </div>
+    <div style="margin-top:20px; display:flex; justify-content:space-between;">
+       <button class="embed-check-btn" id="tl-prev" onclick="moveTimeline(-1)">← Previous Event</button>
+       <button class="embed-check-btn" id="tl-next" onclick="moveTimeline(1)">Next Event →</button>
+    </div>
+  `;
+  updateTimelineDisplay();
+  container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function moveTimeline(dir) {
+  currentTimelineIndex += dir;
+  if(currentTimelineIndex < 0) currentTimelineIndex = 0;
+  if(currentTimelineIndex >= globalTimeline.length) currentTimelineIndex = globalTimeline.length - 1;
+  updateTimelineDisplay();
+}
+
+function updateTimelineDisplay() {
+  const ev = globalTimeline[currentTimelineIndex];
+  document.getElementById('tl-year').textContent = ev.year;
+  document.getElementById('tl-title').textContent = ev.title;
+  document.getElementById('tl-desc').textContent = ev.desc;
+  
+  document.getElementById('tl-prev').disabled = (currentTimelineIndex === 0);
+  document.getElementById('tl-prev').style.opacity = (currentTimelineIndex === 0) ? '0.5' : '1';
+  document.getElementById('tl-next').disabled = (currentTimelineIndex === globalTimeline.length - 1);
+  document.getElementById('tl-next').style.opacity = (currentTimelineIndex === globalTimeline.length - 1) ? '0.5' : '1';
+}
+
 // ========== EXPORT ALL FUNCTIONS ==========
 window.toggleOne = toggleOne;
 window.toggleGroup = toggleGroup;
@@ -634,3 +733,7 @@ window.checkAlignment = checkAlignment;
 window.checkAfricaTimeline = checkAfricaTimeline;
 window.checkConflictMapper = checkConflictMapper;
 window.checkTreatyBuilder = checkTreatyBuilder;
+window.startEssayBuilder = startEssayBuilder;
+window.generateEssayPrompt = generateEssayPrompt;
+window.startTimelineInteractive = startTimelineInteractive;
+window.moveTimeline = moveTimeline;
