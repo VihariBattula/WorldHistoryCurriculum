@@ -882,6 +882,44 @@ window.QUIZ_DATA = {
         ]
     },
 
+    // UNIT 7: LATIN AMERICA
+    "unit7_a": {
+        title: "Unit 7: Latin America (Variant A)",
+        subtitle: "Colonial Legacies, Cold War, and State Terror",
+        nextVariantId: "unit7_b",
+        questions: [
+            { type: "multiple_choice", text: "The primary driver of the Haitian Revolution was:", options: [{ key: "a", text: "Religious conflict" }, { key: "b", text: "The brutal conditions of the sugar plantation slave economy" }, { key: "c", text: "Border disputes with Spain" }, { key: "d", text: "Industrialization" }], correctAnswer: "b", explanation: "Over 500k enslaved Africans rose up against French planters." },
+            { type: "multiple_choice", text: "The Roosevelt Corollary to the Monroe Doctrine claimed the US had the right to:", options: [{ key: "a", text: "Colonize South America" }, { key: "b", text: "Act as an 'international police power' in the Americas" }, { key: "c", text: "Ban all trade with Europe" }, { key: "d", text: "Build the Panama Canal" }], correctAnswer: "b", explanation: "It justified countless US military interventions in Latin America." },
+            { type: "multiple_choice", text: "During the Cold War, the CIA orchestrated the 1954 overthrow of which democratically elected Guatemalan leader?", options: [{ key: "a", text: "Fidel Castro" }, { key: "b", text: "Jacobo Árbenz" }, { key: "c", text: "Emiliano Zapata" }, { key: "d", text: "Salvador Allende" }], correctAnswer: "b", explanation: "He was overthrown primarily because his land reforms threatened the United Fruit Company." },
+            { type: "multiple_choice", text: "Argentina's 'Dirty War' characterized by the disappearance of 30,000 citizens was a campaign against:", options: [{ key: "a", text: "British invaders" }, { key: "b", text: "Alleged left-wing subversives and political dissidents" }, { key: "c", text: "Drug cartels" }, { key: "d", text: "Indigenous populations" }], correctAnswer: "b", explanation: "A right-wing military junta systematically exterminated anyone seen as socialist." },
+            { type: "multiple_choice", text: "Fidel Castro's 1959 revolution overthrew the US-backed dictator:", options: [{ key: "a", text: "Augusto Pinochet" }, { key: "b", text: "Fulgencio Batista" }, { key: "c", text: "Porfirio Díaz" }, { key: "d", text: "Simon Bolivar" }], correctAnswer: "b", explanation: "This shifted Cuba into the Soviet orbit during the Cold War." },
+            { type: "short_answer", text: "Explain the connection between the United Fruit Company and US foreign policy in Central America.", rubric: "1) Economic imperialism. 2) UFC controlled infrastructure/land. 3) US used military/CIA to protect corporate profits from land reform." }
+        ]
+    },
+    "unit7_b": {
+        title: "Unit 7: Latin America (Variant B)",
+        subtitle: "Colonial Legacies, Cold War, and State Terror",
+        nextVariantId: "unit7_c",
+        questions: [
+            { type: "multiple_choice", text: "Toussaint L'Ouverture was a prominent leader in the independence movement of:", options: [{ key: "a", text: "Mexico" }, { key: "b", text: "Haiti" }, { key: "c", text: "Cuba" }, { key: "d", text: "Argentina" }], correctAnswer: "b", explanation: "A former slave who led the initial uprising." },
+            { type: "multiple_choice", text: "The 1973 CIA-backed coup in Chile ousted:", options: [{ key: "a", text: "Fidel Castro" }, { key: "b", text: "Salvador Allende" }, { key: "c", text: "Jacobo Árbenz" }, { key: "d", text: "Augusto Pinochet" }], correctAnswer: "b", explanation: "He was replaced by the military dictatorship of Pinochet." },
+            { type: "multiple_choice", text: "Porfirio Díaz's rule in Mexico (the Porfiriato) ended due to:", options: [{ key: "a", text: "A peaceful democratic transition" }, { key: "b", text: "The Mexican Revolution of 1910" }, { key: "c", text: "US invasion" }, { key: "d", text: "The Spanish Civil War" }], correctAnswer: "b", explanation: "Mass inequality and foreign ownership of land sparked the revolution." },
+            { type: "multiple_choice", text: "The 'Mothers of the Plaza de Mayo' protested in Argentina for:", options: [{ key: "a", text: "Higher wages" }, { key: "b", text: "Information about their children who 'disappeared' during the Dirty War" }, { key: "c", text: "The right to vote" }, { key: "d", text: "Lower taxes" }], correctAnswer: "b", explanation: "Their brave public protests challenged the junta's terror." },
+            { type: "short_answer", text: "Discuss why Haiti's path to post-independence prosperity was severely hindered by foreign powers.", rubric: "1) France forcing Haiti to pay massive reparations for lost 'property'. 2) US refusal to recognize Haiti for decades. 3) Crippling debt." }
+        ]
+    },
+    "unit7_c": {
+        title: "Unit 7: Latin America (Variant C)",
+        subtitle: "Advanced: Revolution, Identity, and Economics",
+        nextVariantId: "unit7_a",
+        questions: [
+            { type: "multiple_choice", text: "Simón Bolívar's vision of 'Gran Colombia' sought to:", options: [{ key: "a", text: "Submit to US rule" }, { key: "b", text: "Unify South America into a single powerful republic" }, { key: "c", text: "Retain the Spanish King as a figurehead" }, { key: "d", text: "Return to pre-Columbian society" }], correctAnswer: "b", explanation: "It failed due to regional factionalism and geography." },
+            { type: "multiple_choice", text: "The 'Monroe Doctrine' (1823) originally aimed to:", options: [{ key: "a", text: "Expand US territory into Canada" }, { key: "b", text: "Prevent further European colonization in the Western Hemisphere" }, { key: "c", text: "Start a war with Spain" }, { key: "d", text: "Establish a monarchy in Mexico" }], correctAnswer: "b", explanation: "It effectively declared the Americas the US sphere of influence." },
+            { type: "multiple_choice", text: "Emiliano Zapata and Pancho Villa were key figures in:", options: [{ key: "a", text: "The Cuban Revolution" }, { key: "b", text: "The Mexican Revolution" }, { key: "c", text: "The Haitian Revolution" }, { key: "d", text: "The Dirty War" }], correctAnswer: "b", explanation: "They represented the agrarian and populist forces demanding land reform." },
+            { type: "essay", text: "Analyze the use of 'anti-communism' as a justification for U.S. intervention and support of military dictatorships in Latin America during the Cold War.", rubric: "Use examples like Guatemala (Arbenz), Chile (Allende/Pinochet), or Argentina. Discuss how democratic processes were subverted to prevent perceived Soviet influence." }
+        ]
+    },
+
     // FINAL EXAMS - EXPANDED TO 35 QUESTIONS
     "final_exam_a": {
         title: "Final Examination (Variant A)",
@@ -1213,6 +1251,46 @@ window.QUIZ_DATA = {
                 text: "Compare the 'Green Revolution' in India with the 'Great Leap Forward' in China. Why did one succeed in increasing food security while the other led to mass famine?",
                 rubric: "1) Scientific focus on yield (Green) vs ideological focus on collectivization (Leap). 2) Role of central planning errors vs technological adoption. 3) Impact on rural populations."
             }
+        ]
+    },
+
+    "final_exam_d": {
+        title: "Final Examination (Variant D)",
+        subtitle: "Comprehensive Assessment: Units 1-7",
+        nextVariantId: "final_exam_a",
+        questions: [
+            // UNIT 1: WWI (2 Questions)
+            { type: "multiple_choice", text: "The assassination of Archduke Franz Ferdinand occurred in:", options: [{ key: "a", text: "Berlin" }, { key: "b", text: "Sarajevo" }, { key: "c", text: "London" }, { key: "d", text: "Paris" }], correctAnswer: "b", explanation: "Capital of Bosnia." },
+            { type: "multiple_choice", text: "Article 231 of Versailles is known as:", options: [{ key: "a", text: "War Guilt Clause" }, { key: "b", text: "League Clause" }, { key: "c", text: "Border Clause" }, { key: "d", text: "Trade Clause" }], correctAnswer: "a", explanation: "Blamed Germany for the war." },
+            
+            // UNIT 2: WWII (2 Questions)
+            { type: "multiple_choice", text: "Blitzkrieg means:", options: [{ key: "a", text: "Trench War" }, { key: "b", text: "Lightning War" }, { key: "c", text: "Total War" }, { key: "d", text: "Nuclear War" }], correctAnswer: "b", explanation: "Fast moving tanks and air support." },
+            { type: "multiple_choice", text: "The atomic bombs were dropped on:", options: [{ key: "a", text: "Tokyo/Kyoto" }, { key: "b", text: "Hiroshima/Nagasaki" }, { key: "c", text: "Yokohama/Osaka" }, { key: "d", text: "Sapporo/Fukuoka" }], correctAnswer: "b", explanation: "Ended the war in the Pacific." },
+
+            // UNIT 3: COLD WAR (2 Questions)
+            { type: "multiple_choice", text: "The Truman Doctrine aimed to:", options: [{ key: "a", text: "Spread Communism" }, { key: "b", text: "Contain Communism" }, { key: "c", text: "End the UN" }, { key: "d", text: "Build walls" }], correctAnswer: "b", explanation: "Support fee peoples resisting subjugation." },
+            { type: "multiple_choice", text: "The Cuban Missile Crisis involved:", options: [{ key: "a", text: "UK/France" }, { key: "b", text: "US/USSR" }, { key: "c", text: "China/Japan" }, { key: "d", text: "India/Pakistan" }], correctAnswer: "b", explanation: "Nuclear standoff in 1962." },
+
+            // UNIT 4: DECOLONIZATION (2 Questions)
+            { type: "multiple_choice", text: "Pan-Africanism promotes:", options: [{ key: "a", text: "Tribalism" }, { key: "b", text: "Unity of all African peoples" }, { key: "c", text: "European rule" }, { key: "d", text: "Isolationism" }], correctAnswer: "b", explanation: "Political and economic unity." },
+            { type: "multiple_choice", text: "Apartheid ended with the election of:", options: [{ key: "a", text: "Mugabe" }, { key: "b", text: "Mandela" }, { key: "c", text: "Nkrumah" }, { key: "d", text: "Kenyatta" }], correctAnswer: "b", explanation: "First black president of South Africa (1994)." },
+
+            // UNIT 5: INDIA & CHINA (2 Questions)
+            { type: "multiple_choice", text: "Satyagraha is:", options: [{ key: "a", text: "Violent revolution" }, { key: "b", text: "Non-violent resistance" }, { key: "c", text: "Communist theory" }, { key: "d", text: "Religious law" }], correctAnswer: "b", explanation: "Gandhi's truth force." },
+            { type: "multiple_choice", text: "The 'Great Leap Forward' caused:", options: [{ key: "a", text: "Prosperity" }, { key: "b", text: "Famine" }, { key: "c", text: "Democracy" }, { key: "d", text: "War" }], correctAnswer: "b", explanation: "Failure of collectivization." },
+
+            // UNIT 6: THE MIDDLE EAST (2 Questions)
+            { type: "multiple_choice", text: "The Sykes-Picot Agreement was a secret deal between:", options: [{ key: "a", text: "Britain and France" }, { key: "b", text: "US and Russia" }, { key: "c", text: "Israel and Egypt" }, { key: "d", text: "Iran and Iraq" }], correctAnswer: "a", explanation: "It divided the Ottoman Empire." },
+            { type: "multiple_choice", text: "Mustafa Kemal Atatürk's main goal was to:", options: [{ key: "a", text: "Create an Islamic empire" }, { key: "b", text: "Modernize and secularize Turkey" }, { key: "c", text: "Support the PLO" }, { key: "d", text: "Control Middle East oil" }], correctAnswer: "b", explanation: "He introduced Western reforms and dress." },
+
+            // UNIT 7: LATIN AMERICA (2 Questions)
+            { type: "multiple_choice", text: "The Roosevelt Corollary to the Monroe Doctrine claimed the US had the right to:", options: [{ key: "a", text: "Colonize South America" }, { key: "b", text: "Act as an 'international police power' in the Americas" }, { key: "c", text: "Ban all trade with Europe" }, { key: "d", text: "Build the Panama Canal" }], correctAnswer: "b", explanation: "It justified countless US military interventions." },
+            { type: "multiple_choice", text: "Argentina's 'Dirty War' (1976-1983) was a campaign against:", options: [{ key: "a", text: "British invaders" }, { key: "b", text: "Alleged left-wing subversives and dissidents" }, { key: "c", text: "Drug cartels" }, { key: "d", text: "The Church" }], correctAnswer: "b", explanation: "30,000 people were 'disappeared' by the military junta." },
+
+            // ANALYSIS (3 Questions)
+            { type: "short_answer", text: "Discuss the long-term impact of the Sykes-Picot agreement on modern Middle Eastern borders.", rubric: "1) Artificial borders. 2) Ignored ethnic realities. 3) Roots of current conflicts." },
+            { type: "short_answer", text: "Explain the concept of 'Neocolonialism' using an African or Latin American nation as an example.", rubric: "1) Political independence vs economic reliance. 2) Cash crop dependence/foreign monopolies (e.g., United Fruit Company). 3) Foreign debt." },
+            { type: "essay", text: "Analyze the role of the Cold War in shaping political developments in Latin America during the late 20th century. Provide specific examples.", rubric: "1) US intervention against perceived communism. 2) Support for right-wing military juntas (Dirty War, Pinochet). 3) Impact of the Cuban Revolution." }
         ]
     }
 };
